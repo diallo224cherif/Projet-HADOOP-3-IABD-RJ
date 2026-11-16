@@ -1,0 +1,25 @@
+# Données (téléchargées depuis Kaggle, non versionnées)
+data/
+outputs/
+
+# Environnement Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Spark / Hadoop (logs locaux)
+spark-warehouse/
+metastore_db/
+derby.log
+*.log
+
+# VS Code
+.vscode/
+
+
+app.py
+notebook.ipynb
