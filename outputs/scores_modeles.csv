@@ -1,0 +1,4 @@
+modele,f1_fraude,aire_pr,aire_roc
+baseline_toujours_0,0.0,0.0497,0.5
+regression_logistique,0.0887,0.0486,0.4912
+foret_aleatoire,0.0857,0.051,0.5128
