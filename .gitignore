@@ -1,6 +1,5 @@
 # Données (téléchargées depuis Kaggle, non versionnées)
 data/
-outputs/
 
 # Environnement Python
 .venv/
