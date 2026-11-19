@@ -2,7 +2,7 @@
 
 
 
-Projet du cours Écosystème Hadoop (IABD), réalisé à quatre. L'objectif est de construire un pipeline de données de bout en bout : stockage distribué sur HDFS, analyse exploratoire, profilage comportemental et modélisation avec PySpark dans un notebook Jupyter, puis restitution interactive des résultats dans un dashboard Streamlit.
+Projet du cours Écosystème Hadoop (IABD). L'objectif est de construire un pipeline de données de bout en bout : stockage distribué sur HDFS, analyse exploratoire, profilage comportemental et modélisation avec PySpark dans un notebook Jupyter, puis restitution interactive des résultats dans un dashboard Streamlit.
 
 
 
@@ -32,7 +32,7 @@ Projet du cours Écosystème Hadoop (IABD), réalisé à quatre. L'objectif est 
 
 
 
-Source : [Credit Card Transactions Fraud Detection Dataset (Sparkov)](https://www.kaggle.com/datasets/kartik2112/fraud-detection), publié sur Kaggle par `kartik2112`. Initialement prévu sur *Bank Transaction Fraud Detection* (données synthétiques sans signal exploitable), le projet a basculé sur le jeu de données **Sparkov**, qui simule des comportements bancaires réalistes avec des schémas de fraude identifiables (horaires nocturnes, montants atypiques, catégories à risque).
+Source : [Credit Card Transactions Fraud Detection Dataset (Sparkov)](https://www.kaggle.com/datasets/kartik2112/fraud-detection), publié sur Kaggle par `kartik2112`. Initialement prévu sur *Bank Transaction Fraud Detection* (données synthétiques sans signal exploitable), le projet a basculé sur l'autre jeu de données qui simule des comportements bancaires réalistes avec des schémas de fraude identifiables.
 
 
 
@@ -40,17 +40,15 @@ Le fichier utilisé s'appelle `fraudTest.csv` (~150 Mo).
 
 
 
-| Caractéristique | Valeur |
+Caractéristique | Valeur 
 
-|---|---|
+Lignes | 555 719
 
-| Lignes | 555 719 |
+Colonnes | 23 brutes (22 utiles après suppression de l'index `_c0`)
 
-| Colonnes | 23 brutes (22 utiles après suppression de l'index `_c0`) |
+Cible | `is_fraud` (renommée `est_fraude`) : `1` si la transaction est frauduleuse, `0` sinon
 
-| Cible | `is_fraud` (renommée `est_fraude`) : `1` si la transaction est frauduleuse, `0` sinon |
-
-| Taux de fraude | Environ 0,39 % (fort déséquilibre de classes) |
+Taux de fraude | Environ 0,39 % 
 
 
 
@@ -66,7 +64,7 @@ Les colonnes couvrent trois blocs : les informations du client (`first`, `last`,
 
 
 
-1. **Chargement (4.1) :** Lecture du fichier CSV brut depuis HDFS avec `inferSchema=False` et paramètres optimisés pour WSL (`local[2]`, `spark.driver.memory=3g`, `spark.sql.shuffle.partitions=16`).
+1. **Chargement (4.1) :** Lecture du fichier CSV brut depuis HDFS avec paramètres optimisés pour WSL (`local[2]`, `spark.driver.memory=3g`, `spark.sql.shuffle.partitions=16`).
 
 2. **Renommage et typage (4.2) :** Normalisation des noms de colonnes en français, conversion explicite des types (dates, timestamps, numériques) et contrôle des valeurs non converties.
 
@@ -116,7 +114,7 @@ projet-fraude-hadoop/
 
 ├── requirements.txt             # Dépendances Python (pyspark, pandas, streamlit, jupyter)
 
-├── notebook.ipynb               # Pipeline complet PySpark (étapes 4.1 à 4.6)
+├── features.ipynb               # Pipeline complet PySpark (étapes 4.1 à 4.6)
 
 ├── app.py                       # Dashboard interactif Streamlit
 
@@ -218,4 +216,4 @@ Le chemin HDFS utilisé par le notebook peut être surchargé via la variable d'
 
    ```bash
 
-   streamlit run app.p
+   streamlit run app.py
