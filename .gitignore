@@ -20,6 +20,11 @@ derby.log
 # VS Code
 .vscode/
 
+# Fichiers de données bruts (le CSV reste sur chaque machine)
+*.csv
+*.zip
+*.tar.gz
 
-app.py
-notebook.ipynb
+# Fichiers temporaires de l'éditeur
+.DS_Store
+Thumbs.db
