@@ -1,6 +1,0 @@
-colonne,chi2,p_value,v_cramer
-genre,0.08,0.771665,0.00065
-type_compte,3.82,0.148078,0.00437
-type_transaction,4.28,0.369492,0.00463
-categorie_marchand,6.82,0.234292,0.00584
-type_appareil,0.68,0.878641,0.00184
