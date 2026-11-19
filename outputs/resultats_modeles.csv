@@ -1,3 +1,4 @@
-modele,AUPRC,AUROC,F1_Fraude
-LogisticRegression,0.1694,0.9452,0.0576
-RandomForest,0.5825,0.9782,0.1499
+modele,AUPRC,AUROC,F1_Fraude,Fraudes_detectees,Fraudes_manquees,Fausses_alarmes,Rappel_%,Precision_%
+LogisticRegression,0.1705,0.9452,0.0576,357,73,11619,83.02,2.98
+RandomForest,0.578,0.9781,0.1464,363,67,4167,84.42,8.01
+MLP (Perceptron),0.6111,0.9877,0.3695,368,62,1194,85.58,23.56
