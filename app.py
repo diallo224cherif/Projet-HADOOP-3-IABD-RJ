@@ -4,7 +4,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Détection de Fraude Bancaire — PySpark ML",
-    page_icon="🛡️",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -16,7 +16,7 @@ CORR_PATH = Path("outputs/correlation.csv")
 
 # --- BARRE LATÉRALE (Contexte & état du pipeline) ---
 with st.sidebar:
-    st.title("🛡️ Fraude Bancaire")
+    st.title("Fraude Bancaire")
     st.caption("Pipeline Hadoop / HDFS • PySpark MLlib • Streamlit")
     st.divider()
 
@@ -41,7 +41,7 @@ with st.sidebar:
             st.markdown(f"⚠️ `{path.name}` *(manquant)*")
 
     st.divider()
-    if st.button("🔄 Actualiser les données", use_container_width=True):
+    if st.button("Actualiser les données", use_container_width=True):
         st.rerun()
 
 # --- EN-TÊTE PRINCIPAL ---
@@ -68,7 +68,7 @@ if not has_mlp:
     st.warning(
         "**Perceptron Multicouches (MLP / PMC) absent de `outputs/resultats_modeles.csv`.** "
         "Exécutez la cellule **4.6 unifiée** (contenant les 3 modèles) dans votre notebook, "
-        "puis cliquez sur **🔄 Actualiser les données** dans la barre latérale."
+        "puis cliquez sur ** Actualiser les données** dans la barre latérale."
     )
 
 # --- KPIs GLOBAUX (Meilleur modèle selon l'AUPRC) ---
@@ -95,9 +95,9 @@ st.write("")
 
 # --- NAVIGATION PAR ONGLETS ---
 tab_modeles, tab_heatmap, tab_corr = st.tabs([
-    "📊 Modèles & Performance",
-    "🔥 Carte Thermique (Catégorie × Heure)",
-    "🔗 Corrélations & Profilage",
+    "Modèles & Performance",
+    "Carte Thermique (Catégorie × Heure)",
+    "Corrélations & Profilage",
 ])
 
 # =====================================================================
@@ -109,7 +109,7 @@ with tab_modeles:
     model_cols = st.columns(len(df))
     for ui_col, (_, row) in zip(model_cols, df.iterrows()):
         is_best = row["modele"] == best_row["modele"]
-        badge = " 🏆" if is_best else ""
+        badge = "Meilleur" if is_best else ""
         with ui_col:
             with st.container(border=True):
                 st.markdown(f"#### {row['modele']}{badge}")
