@@ -1,6 +1,5 @@
 # Données (téléchargées depuis Kaggle, non versionnées)
 data/
-outputs/
 
 # Environnement Python
 .venv/
@@ -20,6 +19,10 @@ derby.log
 # VS Code
 .vscode/
 
+# Carpetas y archivos Parquet generados por Spark
+*.parquet/
+*.parquet
+*.crc
+_SUCCESS
 
-app.py
 notebook.ipynb
